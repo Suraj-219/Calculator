@@ -1,4 +1,5 @@
 class Calculator {
+    // constractor method
     constructor() {
         this.previousOperand = '';
         this.currentOperand = '0';

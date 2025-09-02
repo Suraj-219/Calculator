@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #232526 0%, #0f2027 50%, #2c5364 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator {
+    background: #1c1c1c;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 320px;
+    max-width: 100%;
+}
+
+.display {
+    background: #2d2d2d;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.previous-operand {
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 5px;
+    min-height: 20px;
+}
+
+.current-operand {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 65px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn.number {
+    background: #505050;
+    color: #fff;
+}
+
+.btn.number:hover {
+    background: #707070;
+}
+
+.btn.operator {
+    background: #ff9500;
+    color: #fff;
+}
+
+.btn.operator:hover {
+    background: #ffaa33;
+}
+
+.btn.clear {
+    background: #d4d4d2;
+    color: #000;
+}
+
+.btn.clear:hover {
+    background: #e4e4e2;
+}
+
+.btn.equals {
+    background: #ff9500;
+    color: #fff;
+    grid-column: span 2;
+    width: 142px;
+    border-radius: 35px;
+}
+
+.btn.equals:hover {
+    background: #ffaa33;
+}
+
+.btn.zero {
+    grid-column: span 2;
+    width: 142px;
+    border-radius: 35px;
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        width: 280px;
+        padding: 15px;
+    }
+    
+    .btn {
+        height: 55px;
+        width: 55px;
+        font-size: 20px;
+    }
+    
+    .btn.equals,
+    .btn.zero {
+        width: 122px;
+    }
+    
+    .current-operand {
+        font-size: 28px;
+    }
+}
+
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.btn:active {
+    animation: buttonPress 0.1s ease;
+}

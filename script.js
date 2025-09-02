@@ -13,6 +13,7 @@ class Calculator {
         this.shouldResetScreen = false;
     }
 
+    // delete method 
     delete() {
         if (this.currentOperand === '0') return;
         this.currentOperand = this.currentOperand.toString().slice(0, -1);

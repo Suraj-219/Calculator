@@ -5,7 +5,7 @@ class Calculator {
         this.operation = undefined;
         this.shouldResetScreen = false;
     }
-
+ // clear method
     clear() {
         this.currentOperand = '0';
         this.previousOperand = '';
